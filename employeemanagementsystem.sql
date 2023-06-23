@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `host_books_employee` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `host_books_employee`;
+CREATE DATABASE  IF NOT EXISTS `employeemanagementsystem` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `employeemanagementsystem`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: localhost    Database: host_books_employee
+-- Host: localhost    Database: employeemanagementsystem
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -25,12 +25,12 @@ DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
-  `emp_id` int NOT NULL AUTO_INCREMENT,
+  `emp_id` int NOT NULL,
   `email_id` varchar(255) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,8 +39,30 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (27,'akhilyadlapalli@gmail.com','Akhil','Yadlapalli'),(28,'codewithyaks@gmail.com','yaks','code'),(30,'asi@gmail.com','Asi','Yadlapalli');
+INSERT INTO `employee` VALUES (1,'akhilyadlapalli@gmail.com','Akhil','Yadlapalli'),(2,'yakstuber@gmail.com','Yaks','Tuber'),(3,'rockstarakhil6@gmail.com','Rockstar','Akhil');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employee_seq`
+--
+
+DROP TABLE IF EXISTS `employee_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `employee_seq` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee_seq`
+--
+
+LOCK TABLES `employee_seq` WRITE;
+/*!40000 ALTER TABLE `employee_seq` DISABLE KEYS */;
+INSERT INTO `employee_seq` VALUES (151);
+/*!40000 ALTER TABLE `employee_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-23  9:27:18
+-- Dump completed on 2023-06-23 22:54:11
